@@ -1,0 +1,46 @@
+{
+    "created_date": "2025-04-09 13:21:51",
+    "models": {
+        "random_forest_basic": {
+            "file": "random_forest_basic.pkl",
+            "accuracy": 0.9371859296482412
+        },
+        "random_forest_pca": {
+            "file": "random_forest_pca.pkl",
+            "accuracy": 0.8768844221105527
+        },
+        "random_forest_tuned": {
+            "file": "random_forest_tuned.pkl",
+            "parameters": {
+                "n_estimators": 200,
+                "min_samples_split": 2,
+                "min_samples_leaf": 2,
+                "max_samples": null,
+                "max_features": "log2",
+                "max_depth": 30,
+                "bootstrap": true
+            }
+        },
+        "xgboost": {
+            "file": "xgboost_model.pkl"
+        },
+        "gradient_boosting": {
+            "file": "gradient_boosting_model.pkl"
+        },
+        "stacking_ensemble": {
+            "file": "stacking_ensemble.pkl",
+            "accuracy": 0.9095477386934674,
+            "base_models": [
+                "random_forest_tuned",
+                "xgboost",
+                "gradient_boosting"
+            ]
+        }
+    },
+    "preprocessing": {
+        "scaler": "scaler.pkl",
+        "pca": "pca_transformer.pkl",
+        "label_encoders": "label_encoders.pkl",
+        "feature_columns": "feature_columns.pkl"
+    }
+}
